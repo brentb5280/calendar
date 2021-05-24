@@ -67,3 +67,32 @@ var myDay = [
 ]
 
 
+function getHeaderDate() {
+    var currentHeaderDate = moment().format('dddd, MMMM Do');
+    $("#currentDay").text(currentHeaderDate);
+}
+
+
+function saveReminders() {
+    localStorage.setItem("myDay", JSON.stringify(myDay));
+}
+
+
+function displayReminders() {
+    myDay.forEach(function (_thisHour) {
+        $(`#${_thisHour.id}`).val(_thisHour.reminder);
+    })
+}
+
+
+function init() {
+    var storedDay = JSON.parse(localStorage.getItem("myDay"));
+
+    if (storedDay) {
+        myDay = storedDay;
+    }
+
+    saveReminders();
+    displayReminders();
+}
+
