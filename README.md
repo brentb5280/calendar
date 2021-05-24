@@ -16,4 +16,9 @@ WHEN I refresh the page
 THEN the saved events persist
 
 What I did 
-I added a "Script.js" file to insert the javascript 
+-I added a "Script.js" file to insert the javascript 
+-I added the vaibles for the day 9am - 5 pm
+-Set up the local storage 
+-I changed the Font entered in CSS from white to black to make it easier to read
+-added the save button function 
+-set up the saved data in the local storage 
