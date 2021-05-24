@@ -144,3 +144,16 @@ myDay.forEach(function(thisHour) {
     savePlan.append(saveButton);
     hourRow.append(hourField, hourPlan, savePlan);
 })
+
+init();
+
+
+// localStorage
+$(".saveBtn").on("click", function(event) {
+    event.preventDefault();
+    var saveIndex = $(this).siblings(".description").children(".future").attr("id");
+    myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
+    console.log(saveIndex);
+    saveReminders();
+    displayReminders();
+})
